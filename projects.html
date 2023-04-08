@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Css/main.css">
+    <link rel="stylesheet" href="/resources/bootstrap/bootstrap.css">
+    <!--Link to Css-->
+    <!-- <link rel="stylesheet" href="/Css/main.css"> -->
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+
+    <script src="/themeScript.js">
+    </script>
+
+    <title>Projects</title>
+</head>
+<body>
+    
+    <div class="container-fluid d-flex col-12" id="project-container">
+        <div class="row" id="project-container__row">
+            <h1 class="container-fluid d-flex display-1 col-12 justify-content-center"
+                id="project-container__row__heading">
+                Projects
+            </h1>
+            <p class="container-fluid d-flex col-12 justify-content-center fs-5 "
+                id="project-container__row__about-my-projects">
+                This Website was built using bootstrap components, Java Script ,and html and css.   
+            </p>
+        
+        
+            <div class="d-flex justify-content-center container col-12 "
+                    id="project-container__row__projects">
+                <div class="row col-12 justify-content-evenly"
+                    id="project-container__row__projects__project-cards">
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+    <script>
+        function renderCards(cards) {
+            for (var card of cards) {
+                var cardElement = document.createElement('a');
+                cardElement.className = 'card row col-sm-12 col-lg-5 mt-5 p-2 d-flex text-decoration-none project-card';
+                cardElement.href = card.gitHubLink;
+                
+                var imageElement = document.createElement('img');
+                imageElement.src = card.imageUrl;
+                imageElement.className = "col-2 card"
+                imageElement.style = "height: 200px; width: 200px; margin-bottom: 30px"
+                
+                var innerContainer = document.createElement('div');
+                innerContainer.className = "container col-12 d-flex"
+                
+
+                var infoElement = document.createElement('div');
+                infoElement.className = "col-sm-12 col-lg-7 p-2 container d-flex-column project-details";
+
+
+                var titleElement = document.createElement("h4");
+                titleElement.className = "col-12"
+                titleElement.textContent = card.title;
+
+                var descriptionElement = document.createElement("p");
+
+                descriptionElement.className = "project-description col-12"
+
+                descriptionElement.textContent = card.description;
+
+                
+                cardElement.appendChild(innerContainer);
+                innerContainer.appendChild(imageElement);
+                innerContainer.appendChild(infoElement)
+                infoElement.appendChild(titleElement);
+                infoElement.appendChild(descriptionElement);
+                
+                var container = document.querySelector("#project-container__row__projects__project-cards");
+                container.appendChild(cardElement);
+
+
+            }
+        }
+
+            let cards = [
+                {
+                    imageUrl: "/resources/Crop1.jpg",
+                    title: 'Card 1',
+                    description: 'This is the first card',
+                    gitHubLink: ""
+                },
+                {
+                    imageUrl: "/resources/Crop1.jpg",
+                    title: 'Card 2',
+                    description: 'This is the second card',
+                    gitHubLink: ""
+                },
+                {
+                    imageUrl: "/resources/Crop1.jpg",
+                    title: 'Card 1',
+                    description: 'This is the first card',
+                    gitHubLink: ""
+                },
+                {
+                    imageUrl: "/resources/Crop1.jpg",
+                    title: 'Card 1',
+                    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat.',
+                    gitHubLink: ""
+                },
+                {
+                    imageUrl: "/resources/Crop1.jpg",
+                    title: 'Card 1',
+                    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat.',
+                    gitHubLink: ""
+                }
+            ]
+
+            renderCards(cards);
+    </script>
+</body>
+</html>

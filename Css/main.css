@@ -1,0 +1,319 @@
+:root[data-theme="theme-light"] 
+{
+    --text-color: #000;
+    --background-color: #eaf4ff;
+    --highlight-color: #257de2;
+    --gradient-level-2: #a7d0ff;
+    --gradient-level-3: #489dfd;
+    --gradient-level-4: #298dff;
+    --gradient-level-5: #0077ff;
+}
+
+:root[data-theme="theme-dark"]
+{
+    --text-color: #fff;
+    --background-color: #141516;
+    --highlight-color: #257de2;
+    --gradient-level-2: #0077ff;
+    --gradient-level-3: #298dff;
+    --gradient-level-4: #489dfd;
+    --gradient-level-5: #a7d0ff;
+}
+
+body {
+    color: var(--text-color) !important;
+    background-color: var(--background-color) !important;
+    font-family: 'Ubuntu', sans-serif !important;
+    
+}
+
+header {
+    padding: 20px 2% 2px;
+    border-style: solid;
+    border-top: #000;
+    border-right: #000;
+    border-left: #000;
+    border-color: var(--highlight-color);
+    
+}
+
+#header-Html {
+    width: 100%;
+    height: 8rem;
+    
+}
+
+#project-Html {
+    width: 100%;
+    height: 70rem;
+    margin-top: 5rem;
+    
+}
+
+#education-html {
+    width: 100%;
+    height: 97rem;
+}
+
+.header-link {
+    color: var(--text-color) !important ;
+    margin-top: .5rem;
+}
+
+.logo {
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.nav-links li {
+    display:  inline-block;
+    padding: 0px 20px;
+}
+
+.nav-links li a {
+    transition: all 0.3 ease 0s;
+}
+
+.nav-links li a:hover {
+    color: var(--highlight-color) !important;
+}
+
+.theme-btn {
+    background-color: var(--background-color) !important;
+    color: var(--text-color) !important;
+    border-color: var(--text-color) !important;
+    font-weight: bold !important;
+    margin-top: 0rem;
+}
+
+.theme-btn:hover {
+    background-color: var(--text-color) !important;
+    color: var(--background-color) !important;
+}
+
+.btn-group .btn {
+    border-color: var(--text-color) !important;
+    font-weight: bold !important;
+    color: var(--text-color);
+    
+}
+
+.btn-check:checked + .btn,
+ :not(.btn-check) + .btn:active,
+  .btn:first-child:active,
+   .btn.active, .btn.show {
+    color: var(--highlight-color) !important;
+    background-color: var(--text-color) !important;
+    border-color: var(--text-color) !important;
+}
+
+.decal {
+    height: 31rem;
+    width: 26rem;
+    background-color: var(--highlight-color);
+    border-radius: 0rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: absolute;
+    transition: all 0.5s ease-out .1s;
+}
+
+.card-contained {
+    word-wrap: break-word;
+}
+
+.project-details {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.card {
+    background-color: var(--gradient-level-2) !important;
+    color: var(--text-color) !important;
+}
+
+.education-card--picture {
+    width: 45% !important;
+    height: fit-content;
+    display: flex;
+    align-self: center;
+}
+
+.education-card--info {
+    width: 55% !important;
+}
+
+.education-heading {
+    margin-bottom: 6rem;
+}
+
+.column-list {
+    display: grid;
+    grid-template-columns: repeat(2,auto);
+    row-gap: 5px;
+    column-gap: 50px;   
+}
+
+.article {
+    margin-top: 1rem;
+    margin-bottom: 4rem;
+}
+
+.project-card {
+    transition: all 0.01s ease-out .1s;
+}
+
+#splash-photo {
+    max-width: 100%;
+}
+
+
+
+#see-more-projects {
+    visibility: hidden !important;
+}
+
+#box {
+    height: 35rem;
+    width: 30rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    margin-bottom: 3rem;
+}
+
+
+#decal1 {
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--highlight-color);
+}
+
+#decal2 {
+    background-color: var(--gradient-level-2);
+}
+#decal3 {
+    background-color: var(--gradient-level-3);
+}
+
+#info-container {
+
+    background-color: var(--gradient-level-2);
+    font-size: 25px;
+    height: 35rem;
+    width: 44rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 1.5rem;
+    padding-right: 0.5rem;
+    border-radius: 1rem;
+    z-index: 1;
+    border-style: solid;
+    border-color: var(--highlight-color);
+    margin-left: 3rem;
+    margin-right: 3rem;
+    
+}
+
+#project-description {
+    overflow: hidden;
+    word-wrap: break-word;
+}
+
+#education-photo-1 {
+    height: 100%;
+    width: 100%;
+}
+
+#freecodecamp-logo-background {
+    width: 50%;
+    height: 50%;
+}
+
+
+@media screen and (max-width:700px) {
+    #box {
+        width: 98% !important;
+        height: 25rem !important;
+    }
+    .landing-card p {
+        font-size: 80%;
+    }
+    .decal {
+        width: 15rem !important;
+        height: 18rem !important;
+    }
+
+    header {
+        display: flex;
+        flex-direction: column;
+    }
+    header .logo{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    #header-Html {
+        height: 13rem;
+    }
+    #card-container .row{
+        margin-top: 0rem;
+    }
+
+    .landing-card {
+        margin-top: 0rem !important;
+    }
+
+    #info-container {
+        height: auto !important;
+        padding: 1rem;
+    }
+
+}
+
+@media screen and (max-width:500px) {
+
+}
+
+@media screen and (max-width:992px) {
+    #project-Html {
+        height: 65rem;
+    }
+
+    #see-more-projects {
+        visibility: visible !important;
+    }
+
+}
+
+#box:hover #decal1 {
+    transform: rotate(-5deg) ;
+}
+#box:hover #decal2 {
+    transform: rotate(53deg);
+}
+#box:hover #decal3 {
+    transform: rotate(153.5deg);
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(90deg);
+    }
+}
