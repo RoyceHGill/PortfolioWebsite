@@ -32,9 +32,9 @@
             </p>
         
         
-            <div class="d-flex justify-content-center container col-12 "
+            <div class="d-flex justify-content-center container-lg col "
                     id="project-container__row__projects">
-                <div class="row col-12 justify-content-evenly"
+                <div class="row col-12 justify-content-evenly "
                     id="project-container__row__projects__project-cards">
                 </div>
             </div>
@@ -46,20 +46,20 @@
         function renderCards(cards) {
             for (var card of cards) {
                 var cardElement = document.createElement('a');
-                cardElement.className = 'card row col-sm-12 col-lg-5 mt-5 p-2 d-flex text-decoration-none project-card';
+                cardElement.className = 'card row col-lg-5 flex-row mt-4 p-2 d-flex text-decoration-none project-card';
                 cardElement.href = card.gitHubLink;
                 
                 var imageElement = document.createElement('img');
                 imageElement.src = card.imageUrl;
-                imageElement.className = "col-2 card"
+                imageElement.className = "col-2"
                 imageElement.style = "height: 200px; width: 200px; margin-bottom: 30px"
                 
                 var innerContainer = document.createElement('div');
-                innerContainer.className = "container col-12 d-flex"
+                innerContainer.className = "row col-12 d-flex flex-row-1 project-inner-container"
                 
 
                 var infoElement = document.createElement('div');
-                infoElement.className = "col-sm-12 col-lg-7 p-2 container d-flex-column project-details";
+                infoElement.className = "col p-2 row d-flex-column project-details w-100";
 
 
                 var titleElement = document.createElement("h4");
@@ -89,8 +89,10 @@
             let cards = [
                 {
                     imageUrl: "/resources/Crop1.jpg",
-                    title: 'Card 1',
-                    description: 'This is the first card',
+                    title: 'MongoDb, No SQL, ASP.Net, Restful API',
+                    description: 'This is a Restful API Built in C# using ASP.Net, ' + 
+                    'this was built for a hypothetical educational institute that collects and queries ' + 
+                    'weather data from sunshine coast weather sensors. It uses MongoDb as a NoSQL database. The API uses the Repository architecture so that if we need to implement a different type of database we would only have to rewrite the re repository methods and configure the connections and not the controllers. ',
                     gitHubLink: ""
                 },
                 {

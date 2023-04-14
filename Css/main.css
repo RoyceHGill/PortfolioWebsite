@@ -125,12 +125,18 @@ header {
     word-wrap: break-word;
 }
 
-.project-details {
+.project-description {
     display: -webkit-box;
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
+    word-wrap: break-word;
     overflow: hidden;
+    width: 100% !important;
 }
+
+.project-inner-container {
+}
+
 
 .card {
     background-color: var(--gradient-level-2) !important;
@@ -165,13 +171,13 @@ header {
 }
 
 .project-card {
+    width: 45% !important;
     transition: all 0.01s ease-out .1s;
 }
 
 #splash-photo {
     max-width: 100%;
 }
-
 
 
 #see-more-projects {
@@ -223,10 +229,8 @@ header {
     
 }
 
-#project-description {
-    overflow: hidden;
-    word-wrap: break-word;
-}
+
+
 
 #education-photo-1 {
     height: 100%;
