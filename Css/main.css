@@ -23,6 +23,7 @@
 body {
     color: var(--text-color) !important;
     background-color: var(--background-color) !important;
+    font-size: 14px !important;
     font-family: 'Ubuntu', sans-serif !important;
     
 }
@@ -127,7 +128,7 @@ header {
 
 .project-description {
     display: -webkit-box;
-    -webkit-line-clamp: 4;
+    -webkit-line-clamp: 7;
     -webkit-box-orient: vertical;
     word-wrap: break-word;
     overflow: hidden;
@@ -145,6 +146,12 @@ header {
 
 .education-card--picture {
     width: 45% !important;
+    height: fit-content;
+    display: flex;
+    align-self: center;
+}
+
+.reference-picture {
     height: fit-content;
     display: flex;
     align-self: center;
@@ -171,7 +178,6 @@ header {
 }
 
 .project-card {
-    width: 45% !important;
     transition: all 0.01s ease-out .1s;
 }
 

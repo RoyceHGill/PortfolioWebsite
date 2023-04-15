@@ -34,7 +34,7 @@
         
             <div class="d-flex justify-content-center container-lg col "
                     id="project-container__row__projects">
-                <div class="row col-12 justify-content-evenly "
+                <div class="row container-fluid col justify-content-evenly "
                     id="project-container__row__projects__project-cards">
                 </div>
             </div>
@@ -46,7 +46,7 @@
         function renderCards(cards) {
             for (var card of cards) {
                 var cardElement = document.createElement('a');
-                cardElement.className = 'card row col-lg-5 flex-row mt-4 p-2 d-flex text-decoration-none project-card';
+                cardElement.className = 'card row col-lg-5 mt-5 p-2 d-flex text-decoration-none project-card';
                 cardElement.href = card.gitHubLink;
                 
                 var imageElement = document.createElement('img');
@@ -55,20 +55,20 @@
                 imageElement.style = "height: 200px; width: 200px; margin-bottom: 30px"
                 
                 var innerContainer = document.createElement('div');
-                innerContainer.className = "row col-12 d-flex flex-row-1 project-inner-container"
+                innerContainer.className = "row col d-flex  project-inner-container p-0 m-0"
                 
 
                 var infoElement = document.createElement('div');
-                infoElement.className = "col p-2 row d-flex-column project-details w-100";
+                infoElement.className = "col d-flex-column project-details w-100 p-0";
 
 
                 var titleElement = document.createElement("h4");
-                titleElement.className = "col-12"
+                titleElement.className = "col-12 mb-0 p-1"
                 titleElement.textContent = card.title;
 
                 var descriptionElement = document.createElement("p");
 
-                descriptionElement.className = "project-description col-12"
+                descriptionElement.className = "project-description col-12 p-1"
 
                 descriptionElement.textContent = card.description;
 
