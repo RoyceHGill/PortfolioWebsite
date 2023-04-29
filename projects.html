@@ -19,7 +19,7 @@
     <title>Projects</title>
 </head>
 <body>
-    
+      
     <div class="container-fluid d-flex col-12" id="project-container">
         <div class="row" id="project-container__row">
             <h1 class="container-fluid d-flex display-1 col-12 justify-content-center"
@@ -41,90 +41,17 @@
             <img src="" alt="">
         </div>
     </div>
+    <script src="/site.js"></script>
     <script>
-        function renderCards(cards) {
-            for (var card of cards) {
-                var cardElement = document.createElement('a');
-                cardElement.className = 'card row col-lg-5 mt-5 p-2 d-flex text-decoration-none project-card';
-                cardElement.href = card.gitHubLink;
-                
-                var imageElement = document.createElement('img');
-                imageElement.src = card.imageUrl;
-                imageElement.className = "col-2"
-                imageElement.style = "height: 200px; width: 200px; margin-bottom: 30px"
-                
-                var innerContainer = document.createElement('div');
-                innerContainer.className = "row col d-flex  project-inner-container p-0 m-0"
-                
-
-                var infoElement = document.createElement('div');
-                infoElement.className = "col d-flex-column project-details w-100 p-0";
-
-
-                var titleElement = document.createElement("h4");
-                titleElement.className = "col-12 mb-0 p-1"
-                titleElement.textContent = card.title;
-
-                var descriptionElement = document.createElement("p");
-
-                descriptionElement.className = "project-description col-12 p-1"
-
-                descriptionElement.textContent = card.description;
-
-                
-                cardElement.appendChild(innerContainer);
-                innerContainer.appendChild(imageElement);
-                innerContainer.appendChild(infoElement)
-                infoElement.appendChild(titleElement);
-                infoElement.appendChild(descriptionElement);
-                
-                var container = document.querySelector("#project-container__row__projects__project-cards");
-                container.appendChild(cardElement);
-
-
-            }
-        }
-
-            let cards = [
-                {
-                    imageUrl: "/resources/ProjectPhotos/Screenshot 2023-04-16 041122.png",
-                    title: 'MongoDb, No SQL, ASP.Net, Restful API',
-                    description: 'This is a Restful API Built in C# using ASP.Net, ' + 
-                    'Built for a hypothetical educational institute that collects and queries ' + 
-                    'weather data from sunshine coast weather sensors. It uses MongoDb as a NoSQL database. ' +
-                    'A C# ASP.Net restful API that uses Repository architecture.',
-                    gitHubLink: ""
-                },
-                {
-                    imageUrl: "/resources/ProjectPhotos/Screenshot 2023-04-16 082444.png",
-                    title: 'Database Integration ',
-                    description: 'In this Project we were given an existing website that used CSV files for data storage ' +
-                    'and we were tasked with implementing an SQL Database solution and a basic login system it was not a ' +
-                    'requirement that the security was overly secure because we are using this project in a future unit where ' +
-                    'we will implement a security solution. ', 
-                    gitHubLink: ""
-                },
-                {
-                    imageUrl: "/resources/Crop1.jpg",
-                    title: 'Card 1',
-                    description: 'This is the first card',
-                    gitHubLink: ""
-                },
-                {
-                    imageUrl: "/resources/Crop1.jpg",
-                    title: 'Card 1',
-                    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat.',
-                    gitHubLink: ""
-                },
-                {
-                    imageUrl: "/resources/Crop1.jpg",
-                    title: 'Card 1',
-                    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat.',
-                    gitHubLink: ""
-                }
-            ]
-
+        
+        let cards;
+        fetch('projects.json')
+            .then(response => response.json())
+            .then(data => {
+            cards = data;
             renderCards(cards);
+            });
+            
     </script>
 </body>
 </html>
